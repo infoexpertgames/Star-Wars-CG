@@ -1,0 +1,17 @@
+<div class="card">
+    <div class="cardContent">
+        <div class="cardHeader">
+            <div class="cardTitle">{{isPeople() ? "People card" : (isStarships() ? "Starships card" : "")}}</div>
+        </div>
+        <div class="cardBody">
+            <table>
+                <tbody>
+                    <tr *ngFor="let pair of getCardDetailsProperties() | keyvalue">
+                        <td [style.font-weight]="(isPeople() && pair.key == 'mass') ? 'bold' : ((isStarships() && pair.key == 'crew') ? 'bold' : 'normal')">{{pair.key}}</td>
+                        <td [style.font-weight]="(isPeople() && pair.key == 'mass') ? 'bold' : ((isStarships() && pair.key == 'crew') ? 'bold' : 'normal')">{{pair.value}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

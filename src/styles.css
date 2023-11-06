@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: SFDistantGalaxy;
+    src: url('./assets/fonts/SFDistantGalaxy.ttf');
+}
+.galaxyFont {
+    font-family: SFDistantGalaxy;
+}
+.textCenter {
+    text-align: center;
+}
+.center {
+    margin: auto;
+    display: block;
+}
+html, body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    background-color: black;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}

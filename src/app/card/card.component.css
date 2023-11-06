@@ -1,0 +1,22 @@
+.card {
+    display: block;
+    background-color: white;
+    border-radius: 25px;
+    padding: 10px;
+}
+.cardTitle {
+    font-weight: bold;
+    text-align: center;
+}
+.cardContent {
+    display: block;
+    padding: 10px;
+    background-color: #1f1f1f;
+    color: white;
+    border-radius: 25px;
+}
+.cardBody {
+    display: block;
+    height: 400px;
+    overflow: auto;
+}

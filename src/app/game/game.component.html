@@ -1,0 +1,60 @@
+<div class="gameTitle galaxyFont textCenter">Star<br/>Wars</div>
+<div class="gameSubtitle textCenter">Card Game</div>
+<hr>
+<div style="width: 100%; height: 500px;">
+    <div style="width: 90%; height: 500px; margin-left: 5%;">
+        <div style="width: 49%; height: 500px; float: left;">
+            <app-card #leftCard></app-card>
+        </div>
+        <div style="width: 2%; height: 500px; float: left;">
+        </div>
+        <div style="width: 49%; height: 500px; float: left;">
+            <app-card #rightCard></app-card>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="getIsBattleResultReady()">
+    <hr>
+    <div id="winner">{{getBattleWiner()}}</div>
+    <hr>
+</div>
+
+<div *ngIf="getIsBattleResultReady()">
+    <input id="drawButton" class="center" type="button" [style.disabled]="!getIsBattleResultReady()" (click)="initBattle()" value="Draw new cards">
+</div>
+
+<div class="documentHidder" *ngIf="databaseLoadProgress < 100 && !getIsBattleResultReady()">
+    <div class="progressBarComponent" style="width: 310px; height: 50px;">
+        <div class="progressBarFrame" style="width: 300px; height: 20px;">
+            <div class="progressBarBackground" style="width: 300px; height: 20px;">
+                <div class="progressBarBar" [style.width]="databaseLoadProgress + '%'" style="height: 20px"></div>
+                <div class="progressBarPercent">{{ databaseLoadProgress }}%</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="documentHidder" *ngIf="databaseLoadProgress == 100 && !getIsBattleResultReady() && cardsProviderError == null">
+    <div class="infoDialogComponent" style="width: 310px; height: 50px;">
+        <div class="infoDialogFrame" style="width: 300px; height: 20px;">
+            <div class="infoDialogBackground" style="width: 300px; height: 20px;">
+                <div class="infoDialogText">Please wait...</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="documentHidder" *ngIf="cardsProviderError != null">
+    <div class="infoDialogComponent" style="width: 310px; height: 80px;">
+        <div class="infoDialogFrame" style="width: 300px; height: 70px;">
+            <div class="infoDialogBackground" style="width: 300px; height: 70px;">
+                <div class="infoDialogText">{{ cardsProviderError }}</div>
+                <div class="infoDialogButtons">
+                    <input type="button" value="Retry" (click)="init()"/>
+                    <input type="button" value="Run demo" (click)="init(true)"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

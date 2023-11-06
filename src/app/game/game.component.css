@@ -1,0 +1,87 @@
+.gameTitle {
+    margin-top: 20px;
+    font-size: 40pt;
+    line-height: 30pt;
+    color: yellow;
+}
+.gameSubtitle {
+    font-size: 20pt;
+    color: yellow;
+}
+hr {
+    height: 2px;
+    border-width: 0px;
+    color:yellow;
+    background-color:yellow;
+}
+.documentHidder {
+    position: absolute;
+    top: 0;
+    left: 0; 
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.progressBarComponent, .infoDialogComponent {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.progressBarFrame, .infoDialogFrame {
+    padding: 5px;
+    position: relative;
+    background-color: black;
+    border-radius: 5px;
+}
+.progressBarBackground, .infoDialogBackground {
+    position: fixed;
+    background-color: darkgoldenrod;
+    border-radius: 5px;    
+}
+.progressBarBar {
+    position: relative;
+    background-color: yellow;
+    width: 10px;
+    border-radius: 5px;
+}
+.progressBarPercent, .infoDialogText {
+    top: 0px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: black;
+}
+.infoDialogButtons {
+    top: 40px;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    text-align: center;
+    color: black;
+    justify-content: space-around;
+}
+.infoDialogButtons input {
+    width: 120px;
+    text-align: center;
+    border-radius: 5px;
+    border: 2px solid yellow;
+    background-color: black;
+    color: yellow;
+}
+#winner {
+    color: yellow;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20pt;
+}
+#drawButton {
+    padding: 10px;
+    border: 5px solid yellow;
+    background-color: black;
+    color: yellow;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 20pt;
+}
